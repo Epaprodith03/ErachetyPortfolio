@@ -80,6 +80,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     createParticles();
 
+    //Email JS Contact Form
+    const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        emailjs.sendForm('service_j1ox42k', 'template_5cc9kpd', this)
+            .then(function () {
+                alert('Message sent successfully!');
+                contactForm.reset();
+            }, function (error) {
+                alert('Failed to send message. Please try again.');
+                console.log('FAILED...', error);
+            });
+    });
+}
+
     // Resume Button to open PDF in an iframe
     const resumeButton = document.getElementById("view-resume");
     if (resumeButton) {
