@@ -81,6 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
     createParticles();
 
     //Email JS Contact Form
+     document.addEventListener('DOMContentLoaded', () => {
+    emailjs.init("dAqLdPy4IREGOgp6X"); 
     const contactForm = document.getElementById('contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', function (event) {
